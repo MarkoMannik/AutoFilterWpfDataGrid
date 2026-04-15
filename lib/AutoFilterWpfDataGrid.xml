@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AutoFilterWpfDataGrid</name>
+    </assembly>
+    <members>
+        <member name="T:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid">
+            <summary>
+            AutoFilterWpfDataGrid is a WPF custom control that extends the standard DataGrid to provide advanced, user-friendly filtering and summary features. 
+            It automatically generates columns with filter controls in the headers (text boxes, checkboxes, date pickers, etc.) based on the property type of the bound data.
+            It also supports:
+            Filtering for all common data types(string, numeric, boolean, enum, DateTime, Guid, TimeSpan).
+            "No value" (null) filtering for nullable types.
+            Displaying column sums for numeric columns.
+            Debounced filtering for performance.
+            Customizable property headers and sum display.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.Filters">
+            <summary>
+            Filters applied in AutoFilterWpfDataGrid. 'PropertyName' is your key. Then check values.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.IsLicenseValid">
+            <summary>
+            To check your license validity.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowSumInHeadersPropertyListProperty">
+            <summary>
+            Set the properties for which you want to display the sum (∑). By default, the sum (∑) is shown for all properties of type int, long, double, or decimal. Setting this property overrides the default behavior and shows the sum only for the properties listed here.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowSumInHeadersPropertyList">
+            <summary>
+            Set the properties for which you want to display the sum (∑). By default, the sum (∑) is shown for all properties of type int, long, double, or decimal. Setting this property overrides the default behavior and shows the sum only for the properties listed here.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.PropertyHeaderMapListProperty">
+            <summary>
+            Set your property name to match the header you want to display. For example, you may want the property name ‘Dob’ to appear as ‘Date of birth’, etc.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.PropertyHeaderMapList">
+            <summary>
+            Set your property name to match the header you want to display. For example, you may want the property name ‘Dob’ to appear as ‘Date of birth’, etc.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowNoValueFilterCheckBox">
+            <summary>
+            Show "no value" filter checkbox. Lets you filter nullable values. Default value is 'true'. "no value" filter checkbox is visible only when this dependency property is 'true' and column property is nullable.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowNoValueFilterCheckBoxProperty">
+            <summary>
+            Show "no value" filter checkbox. Lets you filter nullable values. Default value is 'true'. "no value" filter checkbox is visible only when this dependency property is 'true' and column property is nullable.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowSumsInHeaders">
+            <summary>
+            Shows the sum (∑) in headers for properties whose type is numeric (int, long, double, or decimal). The default value is ‘true’. You can specify the properties for which the sum (∑) should be shown using the ‘ShowSumInHeadersPropertyList’ property.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowSumsInHeadersProperty">
+            <summary>
+            Shows "sum" in headers where property type is number (int, long, double, decimal). Default value is 'false'.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FilteredColumnHeaderBackground">
+            <summary>
+            Gets or sets the brush used to highlight column headers that have an active filter applied.
+            This allows consumers of the control to customize how filtered columns are visually indicated.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FilteredColumnHeaderBackgroundProperty">
+            <summary>
+            Gets or sets the brush used to highlight column headers that have an active filter applied.
+            This allows consumers of the control to customize how filtered columns are visually indicated.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.LicenseKeyProperty">
+            <summary>
+            Set your license key to unlock all filters.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.LicenseKey">
+            <summary>
+            Set your license key to unlock all filters.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FiltersChangedEvent">
+            <summary>
+            Triggered when filters changed. Useful when you want to use server side filtering. Property "Filters" will give you info about applied filters.
+            </summary>
+        </member>
+        <member name="E:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FiltersChanged">
+            <summary>
+            Triggered when filters changed. Useful when you want to use server side filtering. Property "Filters" will give you info about applied filters.
+            </summary>
+        </member>
+        <member name="M:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.#ctor">
+            <summary>
+            AutoFilterWpfDataGridControl
+            </summary>
+        </member>
+        <member name="M:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.OnItemsSourceChanged(System.Collections.IEnumerable,System.Collections.IEnumerable)">
+            <summary>
+            AutoFilterWpfDataGrid column generation.
+            </summary>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:AutoFilterWpfDataGrid.UserControls.MultiSelectComboBox">
+            <summary>
+            Interaction logic for MultiSelectComboBox.xaml
+            </summary>
+            <summary>
+            MultiSelectComboBox
+            </summary>
+        </member>
+        <member name="M:AutoFilterWpfDataGrid.UserControls.MultiSelectComboBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoFilterWpfDataGrid.UserControls.TimeBoxControl">
+            <summary>
+            Interaction logic for TimeBox.xaml
+            </summary>
+            <summary>
+            TimeBoxControl
+            </summary>
+        </member>
+        <member name="M:AutoFilterWpfDataGrid.UserControls.TimeBoxControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

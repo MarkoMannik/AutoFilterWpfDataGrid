@@ -1,0 +1,139 @@
+AutoFilterWpfDataGrid for WPF
+Advanced DataGrid filtering for WPF (.NET 8)
+
+AutoFilterWpfDataGrid is a WPF custom control that extends the standard DataGrid with powerful, user‑friendly filtering and summary features.
+It automatically generates filter controls in column headers based on the property type of your data source.
+
+👉 Purchase full version (unlimited filters):  
+https://markoee.gumroad.com/l/iyfupu
+
+🚀 Features
+Automatic filter controls in column headers:
+
+Text filters
+
+Numeric filters
+
+Boolean filters (CheckBox)
+
+Enum filters (ComboBox)
+
+Date filters (From/To)
+
+TimeSpan filters (From/To)
+
+Guid filters
+
+Nullable type support with “No value” checkbox
+
+Automatic column header generation
+
+Optional custom header mapping
+
+Automatic numeric column sum (∑) display
+
+Optional per‑column sum configuration
+
+FiltersChanged event for custom logic
+
+Works with any ItemsSource (List, ObservableCollection, EF, etc.)
+
+Pure WPF, no external dependencies
+
+🔑 Licensing
+AutoFilterWpfDataGrid works in FREE MODE by default:
+
+Free mode limitation: only 1 filter can be active at a time.
+
+To unlock unlimited filtering, set your license key:
+
+csharp
+AutoFilterWpfDataGrid.LicenseKey = "YOUR LICENSE KEY HERE";
+You will receive your license key by email after purchase.
+
+👉 Buy license:  
+https://markoee.gumroad.com/l/iyfupu
+
+📦 Installation (NuGet)
+Install via .NET CLI:
+
+Code
+dotnet add package AutoFilterWpfDataGrid
+Or via Package Manager:
+
+Code
+Install-Package AutoFilterWpfDataGrid
+🧩 Basic Usage
+XAML
+xml
+<Window
+    xmlns:local="clr-namespace:AutoFilterWpfDataGrid;assembly=AutoFilterWpfDataGrid">
+
+    <local:AutoFilterWpfDataGrid x:Name="MyAutoFilterWpfDataGrid" />
+</Window>
+Code‑behind
+csharp
+public MainWindow()
+{
+    InitializeComponent();
+
+    // Add your license key here
+    MyAutoFilterWpfDataGrid.LicenseKey = "YOUR LICENSE KEY HERE";
+    MyAutoFilterWpfDataGrid.ItemsSource = GetData();
+}
+⚙ Optional Configuration
+Custom column headers
+csharp
+AutoFilterWpfDataGrid.PropertyHeaderMapList = new List<PropertyHeaderMap>
+{
+    new("Name", "First Name"),
+    new("DateOfBirth", "D.O.B"),
+    new("YOUR-PROPERTY-NAME", "YOUR-DESIRED-HEADER")
+};
+Show sum only on specific columns
+csharp
+AutoFilterWpfDataGrid.ShowSumInHeadersPropertyList = new List<string>
+{
+    "NetIncome",
+    "YOUR-DESIRED-PROPERTY"
+};
+Disable all sums
+csharp
+AutoFilterWpfDataGrid.ShowSumsInHeaders = false;
+Disable “No value” checkbox
+csharp
+AutoFilterWpfDataGrid.ShowNoValueFilterCheckBox = false;
+FiltersChanged event
+csharp
+private void MyGrid_FiltersChanged(object sender, RoutedEventArgs e)
+{
+    var nameFilter = MyGrid.Filters
+        .Where(f => f.PropertyName == "Name")
+        .Select(f => f.StringValue)
+        .FirstOrDefault();
+}
+🧪 Demo Application
+A full demo application is included in the Gumroad ZIP package:
+
+Code
+demo/AutoFilterWpfDataGridDemo.sln
+It demonstrates:
+
+All supported data types
+
+Free mode
+
+Custom headers
+
+Column sums
+
+Real‑time filtering
+
+📬 Support
+For questions, feature requests or bug reports, contact via Gumroad for any Issues.
+
+📜 License
+The demo project is licensed under the MIT License.
+
+AutoFilterWpfDataGrid.dll is NOT covered by the MIT License.
+The DLL is a commercial product and requires a valid license key.
