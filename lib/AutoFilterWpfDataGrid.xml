@@ -118,6 +118,11 @@
             MultiSelectComboBox
             </summary>
         </member>
+        <member name="M:AutoFilterWpfDataGrid.UserControls.MultiSelectComboBox.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:AutoFilterWpfDataGrid.UserControls.MultiSelectComboBox.InitializeComponent">
             <summary>
             InitializeComponent
