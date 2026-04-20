@@ -1,4 +1,5 @@
 ﻿using AutoFilterWpfDataGridDemo.Models;
+using System.Data;
 using System.Windows;
 
 namespace AutoFilterWpfDataGridDemo
@@ -14,7 +15,7 @@ namespace AutoFilterWpfDataGridDemo
         {
             InitializeComponent();
 
-            AutoFilterWpfDataGridControlDemo.LicenseKey = "YOUR LICENSE KEY HERE";
+            MyAutoFilterWpfDataGrid.LicenseKey = "YOUR LICENSE KEY HERE";
 
             //--PropertyHeaderMapList--------------------------------------------------------------------------------------------------------------------------------
             //By default headers will be generated based on property name. So "DateOfBirth" will be displayed as "Date of birth" 
@@ -24,7 +25,7 @@ namespace AutoFilterWpfDataGridDemo
             propertyHeaderMapList.Add(new AutoFilterWpfDataGrid.PropertyHeaderMap("DateOfBirth", "D.O.B")); // 'DateOfBirth' property will be displyed as 'D.O.B'
             propertyHeaderMapList.Add(new AutoFilterWpfDataGrid.PropertyHeaderMap("Nationality", "Country of origin")); // 'Nationality' property will be displyed as 'Country of origin'
             //Un-comment to apply:
-            //AutoFilterWpfDataGridControlDemo.PropertyHeaderMapList = propertyHeaderMapList;
+            //MyAutoFilterWpfDataGrid.PropertyHeaderMapList = propertyHeaderMapList;
 
 
             //--ShowSumInHeadersPropertyList------------------------------------------------------------------------------------------------------------------------
@@ -32,34 +33,34 @@ namespace AutoFilterWpfDataGridDemo
             var showSumInHeadersPropertyList = new List<string>();
             showSumInHeadersPropertyList.Add("NetIncome"); // 'NetIncome' column will have sum (∑) in header. Other numberis columns will not have sum (∑). Add more if you wish
             //Un-comment to apply:
-            //AutoFilterWpfDataGridControlDemo.ShowSumInHeadersPropertyList = showSumInHeadersPropertyList;
+            //MyAutoFilterWpfDataGrid.ShowSumInHeadersPropertyList = showSumInHeadersPropertyList;
 
 
             //--ShowSumsInHeaders------------------------------------------------------------------------------------------------------------------------------------
             //You can disable showing sum (∑) entirely:
             //Un-comment to apply:
-            //AutoFilterWpfDataGridControlDemo.ShowSumsInHeaders = false;
+            //MyAutoFilterWpfDataGrid.ShowSumsInHeaders = false;
 
 
             //--ShowNoValueFilterCheckBox----------------------------------------------------------------------------------------------------------------------------
             //If you do not wish to show 'No value' checkbox filter for nullable types, set to false:
             //Un-comment to apply:
-            //AutoFilterWpfDataGridControlDemo.ShowNoValueFilterCheckBox = false;
+            //MyAutoFilterWpfDataGrid.ShowNoValueFilterCheckBox = false;
 
 
             //--FilteredColumnHeaderBackground------------------------------------------------------------------------------------------------------------------------
             //Set your desired column header background where filter is applied:
             //Un-comment to apply:
-            //AutoFilterWpfDataGridControlDemo.FilteredColumnHeaderBackground = Brushes.Red;
+            //MyAutoFilterWpfDataGrid.FilteredColumnHeaderBackground = Brushes.Red;
         }
 
-        private void AutoFilterWpfDataGridControlDemo_Loaded(object sender, RoutedEventArgs e)
+        private void MyAutoFilterWpfDataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             //Set your ItemsSource. AutoFilterWpfDataGrid will generate filters for supported types
-            AutoFilterWpfDataGridControlDemo.ItemsSource = GetPersons();
+            MyAutoFilterWpfDataGrid.ItemsSource = GetPersons();
 
             //For comparisson with regular DataGrid:
-            RegularDataGrid.ItemsSource = AutoFilterWpfDataGridControlDemo.ItemsSource;
+            RegularDataGrid.ItemsSource = MyAutoFilterWpfDataGrid.ItemsSource;
         }
 
         private List<Person> GetPersons()
@@ -168,15 +169,15 @@ namespace AutoFilterWpfDataGridDemo
 
             return persons;
         }
-        private void AutoFilterWpfDataGridControlDemo_FiltersChanged(object sender, RoutedEventArgs e)
+        private void MyAutoFilterWpfDataGrid_FiltersChanged(object sender, RoutedEventArgs e)
         {
             //You may want to use this event to reload data based on entered filters or whatever reason. You can access the filters via 'Filters' property:
 
             //Examples:
-            var namePropertyFilter = AutoFilterWpfDataGridControlDemo.Filters.Where(filter => filter.PropertyName == "Name").Select(filter => filter.StringValue).FirstOrDefault();
-            var uniqueGuidIdPropertyFilter = AutoFilterWpfDataGridControlDemo.Filters.Where(filter => filter.PropertyName == "UniqueGuidId").Select(filter => filter.StringValue).FirstOrDefault();
-            var dateOfBirthPropertyFilter_From = AutoFilterWpfDataGridControlDemo.Filters.Where(filter => filter.PropertyName == "DateOfBirth").Select(filter => filter.DateTimeFromValue).FirstOrDefault();
-            var dateOfBirthPropertyFilter_To = AutoFilterWpfDataGridControlDemo.Filters.Where(filter => filter.PropertyName == "DateOfBirth").Select(filter => filter.DateTimeFromValue).FirstOrDefault();
+            var namePropertyFilter = MyAutoFilterWpfDataGrid.Filters.Where(filter => filter.PropertyName == "Name").Select(filter => filter.StringValue).FirstOrDefault();
+            var uniqueGuidIdPropertyFilter = MyAutoFilterWpfDataGrid.Filters.Where(filter => filter.PropertyName == "UniqueGuidId").Select(filter => filter.StringValue).FirstOrDefault();
+            var dateOfBirthPropertyFilter_From = MyAutoFilterWpfDataGrid.Filters.Where(filter => filter.PropertyName == "DateOfBirth").Select(filter => filter.DateTimeFromValue).FirstOrDefault();
+            var dateOfBirthPropertyFilter_To = MyAutoFilterWpfDataGrid.Filters.Where(filter => filter.PropertyName == "DateOfBirth").Select(filter => filter.DateTimeFromValue).FirstOrDefault();
 
             //etc.
         }

@@ -1,10 +1,11 @@
-# AutoFilterWpfDataGrid for WPF  
-**Advanced DataGrid filtering for WPF (.NET 8)**
+# AutoFilterWpfDataGrid  
+### Advanced automatic filtering for WPF DataGrid (.NET 8)
 
-AutoFilterWpfDataGrid is a WPF custom control that extends the standard DataGrid with powerful, user‑friendly filtering and summary features.  
-It automatically generates filter controls in column headers based on the property type of your data source.
+**AutoFilterWpfDataGrid** adds automatic, type‑aware filter controls to every DataGrid column —  
+no templates, no converters, no manual UI work.
 
----
+It is a production‑ready WPF control that enhances the standard DataGrid with powerful filtering and optional numeric summaries.
+
 
 ## 📦 ZIP package contents
 
@@ -24,22 +25,21 @@ AutoFilterWpfDataGrid/
 
 ## 🚀 Features
 
-- Automatic filter controls in column headers:
-  - TextBox filters for strings  
-  - Numeric filters  
-  - Boolean filters (CheckBox)  
-  - Enum filters (ComboBox)  
-  - Date filters (From/To)  
-  - TimeSpan filters (From/To)  
-  - Guid filters  
-- Nullable type support with **“No value”** checkbox  
-- Automatic column header generation from property names  
-  (`DateOfBirth` → `Date of birth`)  
-- Optional custom header mapping  
-- Automatic numeric column sum (∑) display  
-- Optional per‑column sum configuration  
-- `FiltersChanged` event for custom logic  
-- Works with any `ItemsSource` (List, ObservableCollection, EF, etc.)
+- **Automatic filter controls** in column headers  
+- **Text filters**
+- **Numeric filters (From/To)**
+- **Boolean filters (CheckBox)**
+- **Enum filters (multi‑select)**
+- **Date filters (From/To)**
+- **TimeSpan filters (From/To)**
+- **Guid filters**
+- **Nullable type support** (“No value”)
+- **Automatic column header generation**
+- **Optional custom header mapping**
+- **Automatic numeric column sum (∑)**
+- **FiltersChanged event**
+- **Pure WPF, zero dependencies**
+- **Works with List / ObservableCollection / BindingList**
 
 ---
 
@@ -94,8 +94,7 @@ Then add a reference to it.
 ```xml
 <Window
     xmlns:local="clr-namespace:AutoFilterWpfDataGrid;assembly=AutoFilterWpfDataGrid">
-
-    <local:AutoFilterWpfDataGrid x:Name="MyAutoFilterWpfDataGrid" />
+    <local:AutoFilterWpfDataGrid x:Name="MyAutoFilterWpfDataGrid" Loaded="MyAutoFilterWpfDataGrid_Loaded"/>
 </Window>
 ```
 
@@ -110,9 +109,14 @@ public MainWindow()
 
     // Add your license key here
     MyAutoFilterWpfDataGrid.LicenseKey = "YOUR LICENSE KEY HERE";
-
-    MyAutoFilterWpfDataGrid.ItemsSource = GetData();
 }
+
+private void MyAutoFilterWpfDataGrid_Loaded(object sender, RoutedEventArgs e)
+{
+    //Set your ItemsSource. AutoFilterWpfDataGrid will generate filters for supported types
+    MyAutoFilterWpfDataGrid.ItemsSource = GetYourData();            
+}
+
 ```
 
 ---
