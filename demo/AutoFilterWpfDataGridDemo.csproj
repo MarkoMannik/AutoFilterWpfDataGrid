@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoFilterWpfDataGrid\AutoFilterWpfDataGrid.csproj" />
+    <Reference Include="AutoFilterWpfDataGrid">
+      <HintPath>..\lib\AutoFilterWpfDataGrid.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
