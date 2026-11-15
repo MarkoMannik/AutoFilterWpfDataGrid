@@ -17,6 +17,14 @@ namespace AutoFilterWpfDataGridDemo
 
             MyAutoFilterWpfDataGrid.LicenseKey = "YOUR LICENSE KEY HERE";
 
+            //Set your desired text values:
+            MyAutoFilterWpfDataGrid.FromText = "From";
+            MyAutoFilterWpfDataGrid.ToText = "To";
+            MyAutoFilterWpfDataGrid.NoValueText = "No value";
+            MyAutoFilterWpfDataGrid.YesText = "Yes";
+            MyAutoFilterWpfDataGrid.NoText = "No";
+            MyAutoFilterWpfDataGrid.SelectText = "Select...";
+
             //--PropertyHeaderMapList--------------------------------------------------------------------------------------------------------------------------------
             //By default headers will be generated based on property name. So "DateOfBirth" will be displayed as "Date of birth" 
             //but You may want to use custom headers for your properties:
@@ -51,7 +59,7 @@ namespace AutoFilterWpfDataGridDemo
             //--FilteredColumnHeaderBackground------------------------------------------------------------------------------------------------------------------------
             //Set your desired column header background where filter is applied:
             //Un-comment to apply:
-            //MyAutoFilterWpfDataGrid.FilteredColumnHeaderBackground = Brushes.Red;
+            //MyAutoFilterWpfDataGrid.FilteredColumnHeaderBackground = System.Windows.Media.Brushes.Silver;
         }
 
         private void MyAutoFilterWpfDataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -171,7 +179,7 @@ namespace AutoFilterWpfDataGridDemo
         }
         private void MyAutoFilterWpfDataGrid_FiltersChanged(object sender, RoutedEventArgs e)
         {
-            //You may want to use this event to reload data based on entered filters or whatever reason. You can access the filters via 'Filters' property:
+            //You may want to use this event to reload data from your DB based on entered filters. You can access the filters via 'Filters' property:
 
             //Examples:
             var namePropertyFilter = MyAutoFilterWpfDataGrid.Filters.Where(filter => filter.PropertyName == "Name").Select(filter => filter.StringValue).FirstOrDefault();

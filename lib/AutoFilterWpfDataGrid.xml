@@ -48,7 +48,7 @@
         </member>
         <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowNoValueFilterCheckBox">
             <summary>
-            Show "no value" filter checkbox. Lets you filter nullable values. Default value is 'true'. "no value" filter checkbox is visible only when this dependency property is 'true' and column property is nullable.
+            Show "no value" (or your defined text value) filter checkbox. Lets you filter nullable values. Default value is 'true'. "no value" filter checkbox is visible only when this dependency property is 'true' and column property is nullable.
             </summary>
         </member>
         <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ShowNoValueFilterCheckBoxProperty">
@@ -86,6 +86,66 @@
         <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.LicenseKey">
             <summary>
             Set your license key to unlock all filters.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FromTextProperty">
+            <summary>
+            Replae "From" with your desired value.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FromText">
+            <summary>
+            Replae "From" with your desired value.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ToTextProperty">
+            <summary>
+            Replae "To" with your desired value.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.ToText">
+            <summary>
+            Replae "To" with your desired value.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.NoValueTextProperty">
+            <summary>
+            Replae "No value" with your desired value.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.NoValueText">
+            <summary>
+            Replae "No value" with your desired value.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.YesTextProperty">
+            <summary>
+            Replae "Yes" with your desired value.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.YesText">
+            <summary>
+            Replae "Yes" with your desired value.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.NoTextProperty">
+            <summary>
+            Replae "No" with your desired value.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.NoText">
+            <summary>
+            Replae "No" with your desired value.
+            </summary>
+        </member>
+        <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.SelectTextProperty">
+            <summary>
+            Replae "Select..." with your desired value.
+            </summary>
+        </member>
+        <member name="P:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.SelectText">
+            <summary>
+            Replae "Select..." with your desired value.
             </summary>
         </member>
         <member name="F:AutoFilterWpfDataGrid.AutoFilterWpfDataGrid.FiltersChangedEvent">
